@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>传奇盛世</title>   
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!--你自己的样式文件 -->
+        <link href="css/your-style.css" rel="stylesheet">        
+        <!-- 以下两个插件用于在IE8以及以下版本浏览器支持HTML5元素和媒体查询，如果不需要用可以移除 -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <h1></h1>
+	<form method="GET" action=".">
+    	<label for="kuafu">跨服中心服</label>
+	<button type='submit' name="conName" value='start'>启动</button>
+    	<button type='submit' name="conName" value='stop'>停止</button>
+    	<button type='submit' name="conName" value='clean'>清理跨服中心数据库</button>
+	</form>
+	      {% if results %}
+        	<h2>{{ results }}</h2>
+      	      {% endif %}
+	<form enctype="multipart/form-data" method="POST" action="/kuafu/"> 
+	{% csrf_token %}
+   	<input type="file" name="file"/>
+   	<br /> 
+   	<!--input type="submit" value="上传文件"/--> 
+	<input type='checkbox' name="option" value='ops'>更新跨服中心服</input>
+	<input type='checkbox' name="option" value='client'>更新跨服前端</input>
+	<input type='checkbox' name="option" value='server'>更新跨服后端</input>
+	<input type='submit' value='更新'></input>
+	</form>
+	<form method="GET" action=".">
+	<button type='submit' name="gameC" value='gameC'>清理战斗服数据</button>
+	</form>
+        <li><a href="../download">获取union.txt</a></li>
+	<!--form method="POST" action=".">
+	<label for="step">获取union.txt</label>
+	<input type="text"  name="step" id="step" value="" />
+	<!input type="submit" value="下载"  name="submit" />
+	<button type='submit' name='d_file' class="btn btn-primary">获取</button>
+	</form-->
+        <!-- 如果要使用Bootstrap的js插件，必须先调入jQuery -->
+        <script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+        <!-- 包括所有bootstrap的js插件或者可以根据需要使用的js插件调用　-->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> 
+    </body>
+</html>

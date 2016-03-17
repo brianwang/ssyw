@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>传奇盛世</title>
+</head>
+<body>
+<h1>下载</h1>
+        <form method="POST" action=".">
+	{% csrf_token %}
+        <label for="step">请输入step值:</label>
+        <input type="text"  name="step" id="step" value="" />
+        <!--input type="submit" value="下载"  name="submit" /-->
+        <button type='submit' name='d_file' class="btn btn-primary">获取</button>
+        </form>
+</body>
+</html>

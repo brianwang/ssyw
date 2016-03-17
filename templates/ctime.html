@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>传奇盛世</title>
+</head>
+<body>
+<h1>修改时间</h1>
+<form method="GET" action=".">
+    <label for="serverdir">服务器名称(如:cqss_ly_tanwan_s1): </label>
+    <input type="text"  name="serverdir" id="serverdir" value="" />
+    <label for="opentime">开服时间(Y-m-d H:M:S): </label>
+    <input type="datetime" name="opentime" id="opentime" value="" />
+    <input type="submit" value="修改"  name="submit" />
+</form>
+      {% if results %}
+        <h2>{{ results }}</h2>
+      {% endif %}
+      {% if error %}
+        <h3>{{ error }}</h3>
+      {% endif %}
+
+</body>
+</html>
